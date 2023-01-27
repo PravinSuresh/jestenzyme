@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Textbox from './components/Textbox/Textbox';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <Textbox placeholder={'Enter some text...'} />
+      <Home />
     </div>
   );
 }
