@@ -2,6 +2,8 @@ import React from 'react';
 import { HomeWrapper, LeftContainer, RightContainer } from './Home.styles';
 import Textbox from '../../components/Textbox/Textbox';
 import Button from '../../components/Button/Button';
+import Questions from '../../components/Questions/Questions';
+import { questions } from '../../data/questiondata';
 
 const Home = () => {
     return(
@@ -10,7 +12,9 @@ const Home = () => {
                 <Textbox placeholder={'Enter value..'}/>
                 <Button text={'Click'}/>
             </LeftContainer>
-            <RightContainer></RightContainer>
+            <RightContainer>
+                <Questions questions={questions}/>
+            </RightContainer>
         </HomeWrapper>
     );
 }
