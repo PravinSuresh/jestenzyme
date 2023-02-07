@@ -5,4 +5,5 @@ export const TextArea = styled.textarea`
     border: 2px solid grey;
     margin-top: 10px;
     outline: none;
+    ${({variant})=>variant==='small' && `width: 50%`};
 `;

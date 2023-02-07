@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { TextArea } from './Textbox.styles';
 
 const Textbox = (props) =>{
-    const {placeholder, cols, rows} = props;
+    const {placeholder, cols, rows, variant, getValue} = props;
     const [text, setText] = useState('');
+
+    useEffect(()=>{
+        if(getValue){
+            getValue(text);
+        }
+    },[text]);
+
     return (
         <>
-            <TextArea cols={cols} rows={rows} placeholder={placeholder} value={text} onChange={(e)=>{setText(e.target.value)}}/>
+            <TextArea variant={variant} cols={cols} rows={rows} placeholder={placeholder} value={text} onChange={(e)=>{setText(e.target.value)}}/>
         </>
     );
 }
